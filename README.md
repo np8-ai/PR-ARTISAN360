@@ -91,23 +91,22 @@ and marketplace linkage engine.
 📁 Repository Structure
 
 Artisans360/
-├── app.js                          # Client application engine, voice recognition & checkout state
-├── index.html                     # Single-page application with accessible modals & responsive grids
-├── server.js                      # Node.js HTTP server & REST API router
-├── db.js                          # JSON file-backed database layer & CRUD controllers
-├── run_server.bat                 # 1-Click launcher script for Windows demonstration
-├── README.md                      # Comprehensive project documentation
-├── data/
-│   └── artisans360_database.json  # Persistent seed records (Crafts, Orders, Artisans)
+├── README.md                       # Project overview and setup documentation
+├── Run-Artisans360.bat             # Windows launcher for the application
+├── app.js                          # Client-side app logic, voice recognition, and cart flow
+├── db.js                          # JSON-backed database layer and CRUD operations
+├── index.html                     # Main single-page storefront UI
+├── server.js                      # Node.js HTTP server and API routes
 ├── images/
-│   ├── logo.jpg                  # Artisans360 official emblem
-│   ├── bandhani.jpg              # Silk Bandhani product showcase image
+│   ├── bandhani.jpg               # Bandhani craft showcase image
+│   ├── copperbells.jpg            # Copper bells showcase image
+│   ├── dandiya.jpg                # Dandiya sticks showcase image
+│   ├── logo.jpg                  # Artisans360 branding/logo
 │   ├── pottery.jpg               # Terracotta pottery showcase image
-│   ├── wallhanging.jpg           # Rabari mirror-work embroidery image
-│   ├── saree.jpg                 # Kutch handloom saree image
-│   ├── dandiya.jpg               # Sankheda lacquered woodcraft image
-│   └── copperbells.jpg           # Nirona copper wind bells image
-└── .gitignore                    # Git ignore rules for local runtime files
+│   ├── saree.jpg                 # Handloom saree showcase image
+│   └── wallhanging.jpg           # Wall hanging showcase image
+└── data/
+    └── artisans360_database.json # Seed catalog, artisans, and order records
 
 🚀 Quickstart & Setup Guide
 
@@ -119,7 +118,7 @@ Prerequisites
 
 Option 1: 1-Click Launch (Windows)
 
-Double-click run_server.bat. It will start the server and open
+Double-click Run-Artisans360.bat. It will start the server and open
 http://localhost:3000 automatically in your default browser.
 
 Option 2: Terminal / Command Line
