@@ -1,7 +1,9 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
-🔗 **Live Website (local):** [Open Artisans360](http://localhost:3000/)
-*(Start the app first; this address is local to your computer, not a public deployment.)*
+🚀 **Deploy the public website:** [Deploy Artisans360 on Render](https://render.com/deploy?repo=https://github.com/np8-ai/PR-ARTISAN360)
+
+After deployment, Render provides a public URL for the website. The `localhost`
+link below is only for running the app on your own computer.
 
 📌 Executive Summary
 
@@ -107,6 +109,8 @@ PR-ARTISAN360/
 ├── app.js
 ├── db.js
 ├── index.html
+├── package.json
+├── render.yaml
 ├── server.js
 ├── images/
 │   ├── bandhani.jpg
@@ -124,7 +128,7 @@ PR-ARTISAN360/
 
 ### Prerequisites
 
-- Node.js (v16.0.0 or higher recommended)
+- Node.js (v18 or higher)
 - Any modern web browser (Google Chrome or Microsoft Edge recommended for full
   Speech API support)
 
@@ -154,6 +158,20 @@ browser.
 Alternatively, open `index.html` directly in a browser. The app then uses
 browser `localStorage` for local data; Node.js API and database features are
 available only when you run the server with `node server.js`.
+
+### Public Deployment (Render)
+
+1. Click [Deploy Artisans360 on Render](https://render.com/deploy?repo=https://github.com/np8-ai/PR-ARTISAN360).
+2. Sign in to Render and authorize access to the GitHub repository if prompted.
+3. Review the `pr-artisan360` web service and choose **Apply** to create it.
+4. When the deployment finishes, open the public `onrender.com` URL shown on
+   the Render service dashboard.
+
+The Blueprint uses Render's free plan. Free services may spin down when idle,
+so the first request after inactivity can take longer. The app stores its
+database in a local JSON file; free Render storage is ephemeral, so database
+changes may be lost when the service restarts or redeploys. Use persistent
+storage before relying on it for production data.
 
 🔌 REST API Endpoints
 

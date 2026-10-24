@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pr-artisan360
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/stats
+    envVars:
+      - key: NODE_ENV
+        value: production

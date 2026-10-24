@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('./db');
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 const MIME_TYPES = {
   '.html': 'text/html',
   '.js': 'text/javascript',
@@ -129,10 +129,10 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log('\n======================================================');
   console.log('🪔 Artisans360 (UTU Bardoli 25km) is LIVE!');
-  console.log('📦 Persistent Database: Active (data/artisans360_database.json)');
+  console.log('📦 JSON Database: Active (data/artisans360_database.json)');
   console.log('🌐 Local URL: http://localhost:' + PORT);
   console.log('======================================================\n');
 });
