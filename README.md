@@ -8,8 +8,8 @@ Pure Gaji Silk Bandhani, Tapi Riverbed Terracotta Pottery, Rabari Mirror-Work
 Copper Bells—face two systemic barriers:
 
 1.  The Digital Literacy Barrier: Complex e-commerce seller portals require
-    typing, metadata entry, and computer literacy that non-literate or
-    vernacular-speaking artisans lack.
+typing, metadata entry, and computer literacy that non-literate or
+vernacular-speaking artisans lack.
 2.  The Middleman & Logistics Exploitation: Intermediaries claim 40%–70% of
     craft sale margins, while buyers have no guarantee of authenticity or direct
     lineage to the master artisan.
@@ -20,20 +20,16 @@ and marketplace linkage engine.
 
 💡 Key Innovations & Core Modules
 
-                        ┌─────────────────────────────────────────────────────────┐
-                        │                      Artisans360                        │
-                        └────────────────────────────┬────────────────────────────┘
-                                                     │
-         ┌───────────────────────────────────────────┴───────────────────────────────────────────┐
-         ▼                                                                                       ▼
-┌─────────────────────────────────┐                                             ┌─────────────────────────────────┐
-│     AI Smart Cataloging Studio  │                                             │   Hyperlocal E-Commerce Engine  │
-├─────────────────────────────────┤                                             ├─────────────────────────────────┤
-│ • Photo-to-Listing Auto-Fill    │                                             │ • 1-25 km Dynamic Geofence      │
-│ • Fair Artisan Wage Calculator  │                                             │ • 4-Step Secure Checkout        │
-│ • Multilingual Voice Dictation  │                                             │ • Hand-to-Hand OTP Verification │
-│ • Web Speech Synthesis (TTS)    │                                             │ • Zero Middleman Cut (100% Pay) │
-└─────────────────────────────────┘                                             └─────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────┐
+│                            Artisans360                                     │
+├────────────────────────────────────────────────────────────────────────────┤
+│ AI Smart Cataloging Studio                 │ Hyperlocal E-Commerce Engine     │
+│ ──────────────────────────────────────── │ ─────────────────────────────── │
+│ • Photo-to-Listing Auto-Fill               │ • 1–25 km Dynamic Geofence      │
+│ • Fair Artisan Wage Calculator             │ • 4-Step Secure Checkout        │
+│ • Multilingual Voice Dictation             │ • Hand-to-Hand OTP Verification │
+│ • Web Speech Synthesis (TTS)               │ • Zero Middleman Cut (100% Pay) │
+└────────────────────────────────────────────────────────────────────────────┘
 
 1. 📸 Multimodal "Snap & Sell" AI Smart Cataloging
 
@@ -96,21 +92,22 @@ and marketplace linkage engine.
 
 Artisans360/
 ├── app.js                          # Client application engine, voice recognition & checkout state
-├── index.html                      # Single-page application with accessible modals & responsive grids
-├── server.js                       # Node.js HTTP server & REST API router
-├── db.js                           # JSON file-backed database layer & CRUD controllers
-├── run_server.bat                  # 1-Click launcher script for Windows demonstration
-├── README.md                       # Comprehensive project documentation
+├── index.html                     # Single-page application with accessible modals & responsive grids
+├── server.js                      # Node.js HTTP server & REST API router
+├── db.js                          # JSON file-backed database layer & CRUD controllers
+├── run_server.bat                 # 1-Click launcher script for Windows demonstration
+├── README.md                      # Comprehensive project documentation
 ├── data/
-│   └── artisans360_database.json   # Persistent seed records (Crafts, Orders, Artisans)
-└── images/
-    ├── logo.jpg                    # Artisans360 official emblem
-    ├── bandhani.jpg                # Silk Bandhani product showcase image
-    ├── pottery.jpg                 # Terracotta pottery showcase image
-    ├── wallhanging.jpg             # Rabari mirror-work embroidery image
-    ├── saree.jpg                   # Kutch handloom saree image
-    ├── dandiya.jpg                 # Sankheda lacquered woodcraft image
-    └── copperbells.jpg             # Nirona copper wind bells image
+│   └── artisans360_database.json  # Persistent seed records (Crafts, Orders, Artisans)
+├── images/
+│   ├── logo.jpg                  # Artisans360 official emblem
+│   ├── bandhani.jpg              # Silk Bandhani product showcase image
+│   ├── pottery.jpg               # Terracotta pottery showcase image
+│   ├── wallhanging.jpg           # Rabari mirror-work embroidery image
+│   ├── saree.jpg                 # Kutch handloom saree image
+│   ├── dandiya.jpg               # Sankheda lacquered woodcraft image
+│   └── copperbells.jpg           # Nirona copper wind bells image
+└── .gitignore                    # Git ignore rules for local runtime files
 
 🚀 Quickstart & Setup Guide
 
@@ -153,11 +150,8 @@ localStorage).
 
 👥 Team HeritageCoders (SIH 2026)
 
-
 📄 License & Attribution
 
 Developed for Smart India Hackathon (SIH). Distributed under the MIT License.
 All craft imagery and cultural motifs represent genuine Gujarati traditional
 craft heritage.
-
-
