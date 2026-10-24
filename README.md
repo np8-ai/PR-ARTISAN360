@@ -27,7 +27,7 @@ The flowchart shows how a craft moves from artisan cataloging to a local,
 OTP-verified delivery.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A["Capture a craft photo or voice description"] --> B["AI-assisted cataloging and cultural story"]
     B --> C["Fair price: materials, labor, and artisan margin"]
     C --> D["Publish craft listing"]
