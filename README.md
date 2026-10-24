@@ -1,6 +1,6 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
-🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/) *(local only; the site must be running on your computer)*
+🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/)
 
 📌 Executive Summary
 
@@ -122,30 +122,37 @@ PR-ARTISAN360/
 
 🚀 Quickstart & Setup Guide
 
-Prerequisites
+### Prerequisites
 
-  - Node.js (v16.0.0 or higher recommended)
-  - Any modern web browser (Google Chrome or Microsoft Edge recommended for full
-    Speech API support)
+- Node.js (v16.0.0 or higher recommended)
+- Any modern web browser (Google Chrome or Microsoft Edge recommended for full
+  Speech API support)
 
-Option 1: 1-Click Launch (Windows)
+### Option 1: 1-Click Launch (Windows)
 
-Double-click Run-Artisans360.bat. It will start the server and open
-http://localhost:3000 automatically in your default browser.
+Double-click `Run-Artisans360.bat`. It will start the server and open
+[http://localhost:3000](http://localhost:3000) automatically in your default
+browser.
 
-Option 2: Terminal / Command Line
+### Option 2: Terminal / Command Line
 
-1.  Clone the repository:
-    git clone https://github.com/np8-ai/Artisans360.git
-    cd Artisans360
-2.  Start the local server:
-    node server.js
-3.  Open your browser and navigate to:
-    http://localhost:3000
+1. Clone the repository:
 
-(Note: The client can also be launched directly by opening index.html in your
-browser. In offline mode, the client gracefully falls back to browser-managed
-localStorage).
+   ```bash
+   git clone https://github.com/np8-ai/PR-ARTISAN360.git
+   cd PR-ARTISAN360
+   ```
+
+2. Start the local server:
+
+   ```bash
+   node server.js
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+You can also open `index.html` directly in your browser. In offline mode, the
+client gracefully falls back to browser-managed localStorage.
 
 🔌 REST API Endpoints
 
