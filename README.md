@@ -1,9 +1,6 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
-🚀 **Deploy the public website:** [Deploy Artisans360 on Render](https://render.com/deploy?repo=https://github.com/np8-ai/PR-ARTISAN360)
-
-After deployment, Render provides a public URL for the website. The `localhost`
-link below is only for running the app on your own computer.
+🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/)
 
 📌 Executive Summary
 
