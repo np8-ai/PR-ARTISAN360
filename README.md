@@ -22,24 +22,25 @@ and marketplace linkage engine.
 
 💡 Key Innovations & Core Modules
 
-The diagram below shows how an artisan's craft moves from cataloging to direct
-sale and OTP-verified delivery.
+The complete artisan-to-buyer flow:
 
-```mermaid
-flowchart LR
-    A["Artisan captures a craft photo<br/>or describes it by voice"] --> B["AI smart cataloging<br/>Recognize craft, create story,<br/>suggest tags and description"]
-    B --> C["Fair wage calculator<br/>Materials + labor + artisan margin"]
-    C --> D["Publish craft listing"]
-    D --> E{"Buyer within<br/>1–25 km?"}
-    E -->|Yes| F["Direct marketplace"]
-    E -->|No| X["Outside delivery area"]
-    F --> G["Four-step checkout<br/>COD or UPI"]
-    G --> H["Hand-to-hand delivery<br/>verified by one-time password"]
-    H --> I["Direct artisan payment<br/>without a middleman cut"]
-    B -.-> J["Multilingual voice input<br/>Gujarati, Hindi, Marathi, English"]
-    F -.-> K["Listen to the artisan's<br/>spoken craft story"]
-    D -.-> L["Database explorer<br/>and JSON export"]
-```
+1. **Capture a craft:** The artisan takes a product photo or describes it by
+   voice in Gujarati, Hindi, Marathi, or English.
+2. **Create the listing:** AI-assisted cataloging identifies the craft and
+   suggests a description, cultural story, and tags.
+3. **Set a fair price:** The wage calculator combines material costs, labor,
+   and the artisan's margin.
+4. **Publish to the marketplace:** Buyers can discover the listing and hear the
+   artisan's spoken story.
+5. **Check delivery distance:** The marketplace serves buyers within the
+   1–25 km delivery area.
+6. **Place the order:** Buyers complete checkout using cash on delivery (COD)
+   or UPI.
+7. **Verify delivery:** The buyer confirms hand-to-hand delivery with a
+   one-time password (OTP), and payment goes directly to the artisan.
+
+The database explorer provides craft, order, and artisan records with JSON
+export.
 
 1. 📸 Multimodal "Snap & Sell" AI Smart Cataloging
 
