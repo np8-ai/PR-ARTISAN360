@@ -22,16 +22,24 @@ and marketplace linkage engine.
 
 💡 Key Innovations & Core Modules
 
-┌────────────────────────────────────────────────────────────────────────────┐
-│                            Artisans360                                     │
-├────────────────────────────────────────────────────────────────────────────┤
-│ AI Smart Cataloging Studio                 │ Hyperlocal E-Commerce Engine     │
-│ ──────────────────────────────────────── │ ─────────────────────────────── │
-│ • Photo-to-Listing Auto-Fill               │ • 1–25 km Dynamic Geofence      │
-│ • Fair Artisan Wage Calculator             │ • 4-Step Secure Checkout        │
-│ • Multilingual Voice Dictation             │ • Hand-to-Hand OTP Verification │
-│ • Web Speech Synthesis (TTS)               │ • Zero Middleman Cut (100% Pay) │
-└────────────────────────────────────────────────────────────────────────────┘
+The diagram below shows how an artisan's craft moves from cataloging to direct
+sale and OTP-verified delivery.
+
+```mermaid
+flowchart LR
+    A["Artisan captures a craft photo<br/>or describes it by voice"] --> B["AI smart cataloging<br/>Recognize craft, create story,<br/>suggest tags and description"]
+    B --> C["Fair wage calculator<br/>Materials + labor + artisan margin"]
+    C --> D["Publish craft listing"]
+    D --> E{"Buyer within<br/>1–25 km?"}
+    E -->|Yes| F["Direct marketplace"]
+    E -->|No| X["Outside delivery area"]
+    F --> G["Four-step checkout<br/>COD or UPI"]
+    G --> H["Hand-to-hand delivery<br/>verified by one-time password"]
+    H --> I["Direct artisan payment<br/>without a middleman cut"]
+    B -.-> J["Multilingual voice input<br/>Gujarati, Hindi, Marathi, English"]
+    F -.-> K["Listen to the artisan's<br/>spoken craft story"]
+    D -.-> L["Database explorer<br/>and JSON export"]
+```
 
 1. 📸 Multimodal "Snap & Sell" AI Smart Cataloging
 
@@ -92,23 +100,25 @@ and marketplace linkage engine.
 
 📁 Repository Structure
 
-Artisans360/
-├── README.md                       # Project overview and setup documentation
-├── Run-Artisans360.bat             # Windows launcher for the application
-├── app.js                          # Client-side app logic, voice recognition, and cart flow
-├── db.js                          # JSON-backed database layer and CRUD operations
-├── index.html                     # Main single-page storefront UI
-├── server.js                      # Node.js HTTP server and API routes
+```text
+PR-ARTISAN360/
+├── README.md
+├── Run-Artisans360.bat
+├── app.js
+├── db.js
+├── index.html
+├── server.js
 ├── images/
-│   ├── bandhani.jpg               # Bandhani craft showcase image
-│   ├── copperbells.jpg            # Copper bells showcase image
-│   ├── dandiya.jpg                # Dandiya sticks showcase image
-│   ├── logo.jpg                  # Artisans360 branding/logo
-│   ├── pottery.jpg               # Terracotta pottery showcase image
-│   ├── saree.jpg                 # Handloom saree showcase image
-│   └── wallhanging.jpg           # Wall hanging showcase image
-└── data/
-    └── artisans360_database.json # Seed catalog, artisans, and order records
+│   ├── bandhani.jpg
+│   ├── copperbells.jpg
+│   ├── dandiya.jpg
+│   ├── logo.jpg
+│   ├── pottery.jpg
+│   ├── saree.jpg
+│   └── wallhanging.jpg
+└── data/                          (created automatically when the server starts)
+    └── artisans360_database.json  (initialized by the database module)
+```
 
 🚀 Quickstart & Setup Guide
 
