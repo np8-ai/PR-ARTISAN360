@@ -1,6 +1,7 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
-🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/)
+🔗 **Live Website (local):** [Open Artisans360](http://localhost:3000/)
+*(Start the app first; this address is local to your computer, not a public deployment.)*
 
 📌 Executive Summary
 
@@ -22,25 +23,23 @@ and marketplace linkage engine.
 
 💡 Key Innovations & Core Modules
 
-The complete artisan-to-buyer flow:
+The flowchart shows how a craft moves from artisan cataloging to a local,
+OTP-verified delivery.
 
-1. **Capture a craft:** The artisan takes a product photo or describes it by
-   voice in Gujarati, Hindi, Marathi, or English.
-2. **Create the listing:** AI-assisted cataloging identifies the craft and
-   suggests a description, cultural story, and tags.
-3. **Set a fair price:** The wage calculator combines material costs, labor,
-   and the artisan's margin.
-4. **Publish to the marketplace:** Buyers can discover the listing and hear the
-   artisan's spoken story.
-5. **Check delivery distance:** The marketplace serves buyers within the
-   1–25 km delivery area.
-6. **Place the order:** Buyers complete checkout using cash on delivery (COD)
-   or UPI.
-7. **Verify delivery:** The buyer confirms hand-to-hand delivery with a
-   one-time password (OTP), and payment goes directly to the artisan.
-
-The database explorer provides craft, order, and artisan records with JSON
-export.
+```mermaid
+flowchart TD
+    A["Capture a craft photo or voice description"] --> B["AI-assisted cataloging and cultural story"]
+    B --> C["Fair price: materials, labor, and artisan margin"]
+    C --> D["Publish craft listing"]
+    D --> E{"Buyer within 1-25 km?"}
+    E -->|Yes| F["Checkout with COD or UPI"]
+    E -->|No| X["Outside delivery area"]
+    F --> G["Hand-to-hand delivery"]
+    G --> H["Verify delivery with OTP"]
+    H --> I["Direct payment to artisan"]
+    B -.-> J["Gujarati, Hindi, Marathi, and English voice input"]
+    D -.-> K["Database explorer and JSON export"]
+```
 
 1. 📸 Multimodal "Snap & Sell" AI Smart Cataloging
 
@@ -152,8 +151,9 @@ browser.
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can also open `index.html` directly in your browser. In offline mode, the
-client gracefully falls back to browser-managed localStorage.
+Alternatively, open `index.html` directly in a browser. The app then uses
+browser `localStorage` for local data; Node.js API and database features are
+available only when you run the server with `node server.js`.
 
 🔌 REST API Endpoints
 
