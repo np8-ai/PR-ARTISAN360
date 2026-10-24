@@ -2,9 +2,9 @@
 
 🔗 **Public Website:** [Open Artisans360](https://np8-ai.github.io/PR-ARTISAN360/)
 
-GitHub Pages hosts the public, static demo. Each visitor's changes are stored
-only in that visitor's browser; shared API and database features require the
-Node.js server described below.
+GitHub Pages hosts the public demo. Listings and changes are stored separately
+in each visitor's browser; shared API and database features require the Node.js
+server described below.
 
 📌 Executive Summary
 

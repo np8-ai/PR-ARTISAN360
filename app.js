@@ -4,10 +4,18 @@
 // ==========================================
 let currentDbExplorerTab = 'crafts';
 let latestDatabaseDump = null;
+const USE_BROWSER_ONLY_STORAGE = window.location.protocol === 'file:' || window.location.hostname.endsWith('github.io');
 
 async function openDatabaseModal() {
   const modal = document.getElementById('databaseModal');
   if (modal) modal.classList.remove('hidden');
+
+  if (USE_BROWSER_ONLY_STORAGE) {
+    latestDatabaseDump = { craft_catalog: allProducts, orders_and_deliveries: [], artisan_profiles: [] };
+    renderDatabaseExplorerContent();
+    if (window.lucide) lucide.createIcons();
+    return;
+  }
 
   try {
     const res = await fetch('/api/dump');
@@ -142,6 +150,8 @@ function downloadDatabaseDumpJSON() {
 // LIVE DATABASE CLIENT & API SYNC
 // ==========================================
 async function syncDatabaseOnLoad() {
+  if (USE_BROWSER_ONLY_STORAGE) return;
+
   try {
     const res = await fetch('/api/products');
     if (res.ok) {
@@ -163,13 +173,20 @@ async function syncDatabaseOnLoad() {
       const stats = await statRes.json();
       const badge = document.getElementById('dbLiveStatusBadge');
       if (badge) {
-        badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Database: Active (${stats.totalProducts} Crafts, ${stats.totalOrders} Orders)</span>`;
+        badge.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+        badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Server database active (${stats.totalCrafts} crafts, ${stats.totalOrders} orders)</span>`;
+      }
+      const storageDescription = document.getElementById('dbStorageDescription');
+      if (storageDescription) {
+        storageDescription.textContent = `Server storage: ${stats.storageFile || 'JSON database'} • Crafts, orders, and artisan profiles`;
       }
     }
   } catch (e){}
 }
 
 async function persistProductToDB(product) {
+  if (USE_BROWSER_ONLY_STORAGE) return;
+
   try {
     await fetch('/api/products', {
       method: 'POST',
@@ -182,6 +199,8 @@ async function persistProductToDB(product) {
 }
 
 async function deleteProductFromDB(id) {
+  if (USE_BROWSER_ONLY_STORAGE) return;
+
   try {
     await fetch('/api/products/' + id, { method: 'DELETE' });
   } catch (e) {
@@ -190,6 +209,8 @@ async function deleteProductFromDB(id) {
 }
 
 async function persistOrderToDB(order) {
+  if (USE_BROWSER_ONLY_STORAGE) return;
+
   try {
     await fetch('/api/orders', {
       method: 'POST',
@@ -848,11 +869,7 @@ function trackAdminEvent(action, pageSection, details) {
   if (adminLogs.length > 200) adminLogs.pop();
 
   saveState();
-  updateTopBarVisitCount();
 
-  if (currentRole === 'admin') {
-    renderAdminDashboard();
-  }
 }
 
 function exportAdminLogsJSON() {
@@ -1028,9 +1045,7 @@ function initApp() {
   updateCartBadge();
   renderGrid();
   renderSellerDashboard();
-  renderAdminDashboard();
   updateDeliveryBadge();
-  updateTopBarVisitCount();
 
   const savedUser = localStorage.getItem('artisans360_user');
   if (savedUser) {
