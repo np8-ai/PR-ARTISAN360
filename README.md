@@ -1,5 +1,7 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
+🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/) *(local only; the site must be running on your computer)*
+
 📌 Executive Summary
 
 Traditional artisans across rural India—specializing in heritage crafts like
