@@ -1,6 +1,10 @@
 ﻿🪔 Artisans360: AI-Driven Market Linkage & Smart Cataloging for Marginalized Artisans
 
-🔗 **Live Website:** [Open Artisans360](http://127.0.0.1:5500/)
+🔗 **Public Website:** [Open Artisans360](https://np8-ai.github.io/PR-ARTISAN360/)
+
+GitHub Pages hosts the public, static demo. Each visitor's changes are stored
+only in that visitor's browser; shared API and database features require the
+Node.js server described below.
 
 📌 Executive Summary
 
@@ -103,6 +107,9 @@ flowchart LR
 PR-ARTISAN360/
 ├── README.md
 ├── Run-Artisans360.bat
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml
 ├── app.js
 ├── db.js
 ├── index.html
@@ -169,6 +176,10 @@ so the first request after inactivity can take longer. The app stores its
 database in a local JSON file; free Render storage is ephemeral, so database
 changes may be lost when the service restarts or redeploys. Use persistent
 storage before relying on it for production data.
+
+GitHub Pages publishes the static demo at the public website link above. It
+does not run the Node.js API, so its browser-local data is not shared between
+visitors.
 
 🔌 REST API Endpoints
 
